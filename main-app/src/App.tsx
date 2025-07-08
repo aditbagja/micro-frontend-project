@@ -1,28 +1,16 @@
-import CustomButton from "serviceApp/CustomButton";
-import { useAuthContext } from "serviceApp/useAuthContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Homepage from "./pages/Home/Homepage";
+import ServiceApp from "serviceApp/ServiceApp";
 
 function App() {
-  const { isAuthenticated, login, logout } = useAuthContext();
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <CustomButton />
-      </div>
-      <div>
-        <button className="button" onClick={login}>
-          Login
-        </button>
-        <button className="button" onClick={logout}>
-          Logout
-        </button>
-        <p>
-          Login Status:{" "}
-          {isAuthenticated ? "Kamu Berhasil Login" : "Kamu Logout"}
-        </p>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/service/*" element={<ServiceApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

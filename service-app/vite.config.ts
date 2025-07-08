@@ -13,6 +13,7 @@ export default defineConfig({
         "./CustomButton": "./src/components/CustomButton",
         "./AuthProvider": "./src/contexts/AuthContext/AuthProvider",
         "./useAuthContext": "./src/contexts/AuthContext/useAuthContext",
+        "./ServiceApp": "./src/App",
       },
       shared: ["react", "react-dom"],
     }),
