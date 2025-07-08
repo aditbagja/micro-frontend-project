@@ -11,6 +11,8 @@ export default defineConfig({
       filename: "serviceEntry.js",
       exposes: {
         "./CustomButton": "./src/components/CustomButton",
+        "./AuthProvider": "./src/contexts/AuthContext/AuthProvider",
+        "./useAuthContext": "./src/contexts/AuthContext/useAuthContext",
       },
       shared: ["react", "react-dom"],
     }),
